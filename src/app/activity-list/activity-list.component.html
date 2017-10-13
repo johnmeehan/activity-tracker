@@ -1,0 +1,31 @@
+<div class="row row-runs">
+  <h2 class="heading">My Activities</h2>
+  <hr />
+  <div class="summary">
+    You've logged
+    <p class="totals">{{ totalDistance | number:"1.1-2"}}km</p>
+    over
+    <p class="totals">{{ totalActivites }}</p>
+    activities since
+    <p class="totals">{{ firstDate | date:'longDate'}}</p>
+  </div>
+  <hr />
+  <table class="table table-hover">
+    <thead>
+      <tr>
+        <th>Name</th>
+        <th>Comments</th>
+        <th>Date</th>
+        <th>Distance</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let activity of activities" [routerLink] ="['/activity', activity.id]">
+        <td class="title">{{ activity.name }}</td>
+        <td>{{ activity.comments }}</td>
+        <td>{{ activity.date | date:'longDate'}}</td>
+        <td>{{ activity.distance }}</td>
+      </tr>
+    </tbody>
+  </table>
+</div>
