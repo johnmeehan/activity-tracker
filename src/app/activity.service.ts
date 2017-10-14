@@ -6,12 +6,13 @@ import { Injectable } from '@angular/core';
 @Injectable()
 export class ActivityService {
   activities: Activity[];
+
   constructor() {
     this.activities = SAVED_ACTIVITES;
    }
 
   getActivity(index: number): Activity {
-    return this.activities[index];
+    return this.activities.find( x => x.id === index);
   }
 
   getActivities(): Activity[] {
