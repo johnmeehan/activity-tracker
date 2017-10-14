@@ -1,5 +1,5 @@
 import { ActivityService } from './../activity.service';
-import { IActivity } from './../shared/iactivity';
+import { Activity } from './../models/activity';
 import { MapService } from './../map.service';
 import { Component, OnInit, AfterViewInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
@@ -10,7 +10,7 @@ import { ActivatedRoute } from '@angular/router';
   styleUrls: ['./map.component.scss']
 })
 export class MapComponent implements OnInit, AfterViewInit {
-  activity: IActivity;
+  activity: Activity;
 
   constructor(
     private mapService: MapService,

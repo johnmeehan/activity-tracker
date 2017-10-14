@@ -1,7 +1,7 @@
 import { Injectable } from '@angular/core';
 import { environment } from './../environments/environment';
 import { ActivityService } from './activity.service';
-import { IActivity } from './shared/iactivity';
+import { Activity } from './models/activity';
 
 declare var omnivore: any;
 declare var L: any;
@@ -16,7 +16,7 @@ export class MapService {
 
   constructor() { }
 
-  plotActivity(activity: IActivity) {
+  plotActivity(activity: Activity) {
     const myStyle = {
       'color': '#3949AB',
       'weight': 5,

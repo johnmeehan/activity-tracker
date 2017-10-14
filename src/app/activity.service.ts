@@ -1,28 +1,28 @@
 import { SAVED_ACTIVITES } from './shared/activities';
-import { IActivity } from './shared/iactivity';
+import { Activity } from './models/activity';
 import { Injectable } from '@angular/core';
 
 
 @Injectable()
 export class ActivityService {
-  activities: IActivity[];
+  activities: Activity[];
   constructor() {
     this.activities = SAVED_ACTIVITES;
    }
 
-  getActivity(index: number): IActivity {
+  getActivity(index: number): Activity {
     return this.activities[index];
   }
 
-  getActivities(): IActivity[] {
+  getActivities(): Activity[] {
     return this.activities.slice(0);
   }
 
-  getTotalActivities(allActivities: IActivity[]): number {
+  getTotalActivities(allActivities: Activity[]): number {
     return allActivities.length;
   }
 
-  getTotalDistance(allActivities: IActivity[]): number {
+  getTotalDistance(allActivities: Activity[]): number {
     let totalDistance = 0;
     for (let i = 0; i < allActivities.length; i ++) {
       totalDistance += allActivities[i].distance;
@@ -30,7 +30,7 @@ export class ActivityService {
     return totalDistance;
   }
 
-  getFirstDate(allActivities: IActivity[]) {
+  getFirstDate(allActivities: Activity[]) {
     let firstDate = new Date('01/01/9999');
     for (let i = 0; i < allActivities.length; i++) {
       const currentDate = allActivities[i].date;

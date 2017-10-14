@@ -1,5 +1,5 @@
 import { ActivityService } from './../activity.service';
-import { IActivity } from './../shared/iactivity';
+import { Activity } from './../models/activity';
 import { Component, OnInit } from '@angular/core';
 
 @Component({
@@ -8,7 +8,7 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./activity-list.component.scss']
 })
 export class ActivityListComponent implements OnInit {
-  activities: IActivity[];
+  activities: Activity[];
   totalActivites: number;
   totalDistance: number;
   firstDate: Date;

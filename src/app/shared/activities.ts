@@ -1,6 +1,6 @@
-import { IActivity } from './iactivity';
+import { Activity } from '../models/activity';
 
-export const SAVED_ACTIVITES: IActivity[] = [
+export const SAVED_ACTIVITES: Activity[] = [
   {
     'id': 1,
     'name': 'Camino',
